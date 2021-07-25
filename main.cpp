@@ -140,10 +140,13 @@ bool menu_daftar(struct orang*pointer_self);
 bool menu_belanja(struct orang*pointer_self);
 bool menu_profile(struct orang*pointer_self);
 bool menu_hiburan(struct orang*pointer_self);
-
+void real_login();
+void ending1();
 main(){
 //	for(int i=0;i<256;i++) printf("%d : %c \n",i, char(i));
+	real_login();
 	while(!menu_form());
+	ending1();
 	//login_form();
 	//signin_form();
 	//bool h=0;
@@ -1907,6 +1910,110 @@ bool menu_hiburan(struct orang*pointer_self){
 	}
 }
 
+void ending1(){	
+	system("cls");
+	system("color 3");
+	
+	gotoxy(9,3);
+	char ta[]="M E M A T I K A N   P R O G R A M . . . . . .";
+	for(int i=0;i<strlen(ta);i++){
+		gotoxy(9+i,3); printf("%c",ta[i]); Sleep(75);
+	}
+	int x=3,y=1;
+	while(true){
+		for(int i=y;i>=1;i--){if(i==1)continue;gotoxy(40+3-x,13+1-i); printf("%c",char(179));Sleep(75);}
+		for(int i=1;i<=y;i++){gotoxy(40+3-x,13+i-1); printf("%c",char(179));Sleep(75);}
+		gotoxy(40+3-x,13+y); printf("%c",char(192));Sleep(75);
+		for(int i=x;i>=1;i--){if(i<=3)continue;gotoxy(40+4-i,13+y); printf("%c",char(196));Sleep(75);}
+		for(int i=1;i<=x;i++){gotoxy(40+i,13+y); printf("%c",char(196));Sleep(75);}
+		gotoxy(40+x+1,13+y); printf("%c",char(217));Sleep(75);
+		for(int i=y;i>=1;i--){gotoxy(40+x+1,13+i-1); printf("%c",char(179));Sleep(75);}
+		for(int i=1;i<=y;i++){if(i==1)continue;gotoxy(40+x+1,13+1-i); printf("%c",char(179));Sleep(75);}
+		gotoxy(40+x+1,13-y); printf("%c",char(191));Sleep(75);
+		for(int i=x;i>=1;i--){gotoxy(40+i,12+1-y); printf("%c",char(196));Sleep(75);}
+		for(int i=1;i<=x;i++){if(i<=3)continue;gotoxy(40+4-i,12+1-y); printf("%c",char(196));Sleep(75);}
+		gotoxy(40+3-x,13-y); printf("%c",char(218));Sleep(75);
+		x+=2;y++;
+		if(y==5) break;
+	}
+	gotoxy(9,23);
+	char te[]="< < <   T E R I M A   K A S I H   > > > ";
+	for(int i=0;i<strlen(te);i++){
+		gotoxy(9+i,23); printf("%c",te[i]); Sleep(75);
+	}
+
+}
+void real_login(){
+	system("cls");printf("%c",char(188));
+	system("color 3");
+	srand(time(0));
+	gambar_kotak(9,3,102,1);
+	for(int i=0;i<100;i++){
+		int bTime=rand()%7;
+		if(i+bTime<100){
+			Sleep(100);
+			for(int j=i;j<=i+bTime;j++){
+				Sleep(20);
+				gotoxy(11+j,4); 
+				printf("%c",char(219));
+			}
+			i=i+bTime;
+			gotoxy(11+i,4); printf("%c",char(219));
+			gotoxy(52,7); printf("%d%c",i,char(37));
+		}
+		else{
+			Sleep(100);
+			for(int j=i;j<=99;j++){
+				Sleep(20);
+				gotoxy(11+j,4); printf("%c",char(219));
+			}
+			i=99;
+			gotoxy(11+i,4); printf("%c",char(219));
+			gotoxy(52,7); printf("%d%c",i,char(37));
+		}
+	}
+	gotoxy(52,7); printf("%d%c",100,char(37));
+	char te[]="G  E  N  E  R  A  L  I  Z  A  T  I  N  G  .  .  .";
+	for(int j=0;j<2;j++){
+		gotoxy(9,10);
+		for(int i=0;i<strlen(te);i++){
+			printf(" "); 
+		}
+		for(int i=0;i<strlen(te);i++){
+			gotoxy(9+i,10); printf("%c",te[i]); Sleep(75);
+		}
+	}
+	gotoxy(9,10);
+	for(int i=0;i<strlen(te);i++){
+			printf(" "); 
+	}
+	gotoxy(9,10); printf("B E R H A S I L   M E M U L A I .");
+	gotoxy(9,12);
+	char ta[]="S E L A M A T   D A T A N G   D I   P R O G R A M K U ";
+	for(int i=0;i<strlen(ta);i++){
+		gotoxy(9+i,12); printf("%c",ta[i]); Sleep(75);
+	}
+	gotoxy(7,12); printf("%c",char(196));
+	Sleep(75);
+	gotoxy(6,12); printf("%c",char(218));
+	Sleep(75);
+	for(int i=0;i<10;i++){
+		gotoxy(6,13+i); printf("%c",char(179));
+		Sleep(75);
+	}
+	gotoxy(6,23); printf("%c",char(192));
+	Sleep(75);
+	gotoxy(7,23); printf("%c",char(196));
+	Sleep(75);
+	gotoxy(9,23);
+	char tu[]="C R E A T E D   B Y : M U H   F A T U R R O H M A N   S .";
+	for(int i=0;i<strlen(tu);i++){
+		gotoxy(9+i,23); printf("%c",tu[i]); Sleep(75);
+	}
+	Sleep(1000);
+	system("cls");
+	system("color F");
+}
 
 
 
